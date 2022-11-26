@@ -1,8 +1,9 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter&display=swap');
+
 body {
 	margin: 0;
-	font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-		'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-		sans-serif;
+	font-family: 'Inter', sans-serif;
+	font-size: 16px;
 	-webkit-font-smoothing: antialiased;
 	-moz-osx-font-smoothing: grayscale;
 }
@@ -10,4 +11,104 @@ body {
 code {
 	font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
 		monospace;
+}
+
+/* input[type=text] {
+	min-width: 300px;
+	padding: 4px;
+	border: 1px solid purple;
+}
+
+input[type=button] {
+	background-color: rgb(240, 240, 240);
+	border: none;
+	border-radius: 2px;
+	box-shadow: 0 0 2px 2px rgb(125, 125, 125, 0.3);
+	transition: background-color 0.2s;
+}
+
+input[type=button]:hover {
+	background-color: rgb(250, 250, 250);
+}
+
+input[type=button]:active {
+	background-color: rgb(208, 149, 208);
+}
+
+input {
+	font-size: 1rem;
+	font-family: inherit;
+} */
+
+.App {}
+
+.BasePathEditor {
+	display: flex;
+	gap: 8px;
+}
+
+.LoadingEmoji {
+	font-size: 64px;
+	position: absolute;
+	left: 50%;
+	top: 50%;
+	transform: translate(-50%, -50%);
+	animation: loading-emoji-spin infinite 5s linear;
+	user-select: none;
+}
+
+@keyframes loading-emoji-spin {
+	from {
+		transform: rotate(0deg);
+	}
+
+	to {
+		transform: rotate(360deg);
+	}
+}
+
+.Gallery {
+	position: absolute;
+	left: 0;
+	top: 0;
+	width: 100vw;
+	height: 100vh;
+	background-color: whitesmoke;
+}
+
+.GalleryFileList {
+	margin: 32px auto;
+	padding: 32px;
+	border: 1px solid black;
+	background-color: white;
+	min-height: 200px;
+	max-height: 80%;
+	min-width: 900px;
+	max-width: 80%;
+	width: 1600px;
+	overflow-y: scroll;
+	overflow-x: hidden;
+	display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+	justify-content: space-around;
+	gap: 8px;
+}
+
+.GalleryItem {
+	display: flex;
+	flex-direction: column;
+	align-items: flex-start;
+}
+
+.GalleryItem>* {
+	max-width: 300px;
+}
+
+.GalleryItem>img {
+	height: 300px;
+	width: 300px;
+	border: 1px solid black;
+	object-fit: cover;
+	image-rendering: optimizeQuality;
 }
