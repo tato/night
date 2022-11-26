@@ -1,7 +1,6 @@
 package basepath
 
 import (
-	"fmt"
 	"net/http"
 	"path/filepath"
 
@@ -35,7 +34,10 @@ func PutBasePath(c *gin.Context) {
 		return
 	}
 
-	fmt.Println("Set base path to: ", req.BasePath)
 	BasePath = filepath.Clean(req.BasePath)
-	c.Status(http.StatusOK)
+
+	resp := GetBasePathResponse{
+		BasePath: BasePath,
+	}
+	c.JSON(http.StatusOK, resp)
 }
